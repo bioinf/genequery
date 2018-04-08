@@ -1,4 +1,4 @@
-source("~/genequery/functions.R")
+source("~/genequery/R/genequery_functions.R")
 
 args <- commandArgs(TRUE)
 csv  <- args[1] 
@@ -13,7 +13,7 @@ if("--help" %in% args) {
       A script for WGCNA production clustering.
  
       Example:
-      ./wgcna_cluster.R preprocessed.csv \n\n")
+      Rscript wgcna_cluster.R GSE1_GPL1.preprocessed.csv \n\n")
  
   q(save="no")
 }
