@@ -1,9 +1,9 @@
-# genequery processing pipeline 
+# GeneQuery database processing pipeline 
 
-This is the pipeline that allows you to download many GSE datasets, and turn them into a [GeneQuery](http://artyomovlab.wustl.edu/genequery/searcher/) database. Following steps are included: 
+This is the pipeline that allows you to download many microarray GSE datasets, and turn them into a [GeneQuery](http://artyomovlab.wustl.edu/genequery/searcher/) database. Following steps are included: 
 
 * Downloading and processing of GPL annotations;
-* Searching for, and downloading preprocessed GSE expression matrices;
+* Searching for, and downloading GSE expression matrices;
 * Preprocessing and quality control of expression matrices;
 * Iterative clustering with WGCNA;
 * Preparation of eigengene expression heatmaps.
@@ -12,7 +12,6 @@ This is the pipeline that allows you to download many GSE datasets, and turn the
 [Alexander Predeus](https://www.researchgate.net/profile/Alexander_Predeus), [Maxim Artyomov Laboratory](https://artyomovlab.wustl.edu/site/), [Washington University in St Louis](https://wustl.edu/)
 
 (c) 2014-2018, GPL v3 license
-GeneQuery DB preprocessing pipeline.
 
 ## GPL selection and processing 
 
@@ -34,7 +33,7 @@ These *3col* files are then used for further processing of expression matrices.
 
 Scripts **annot_to_3col.sh** and **soft_to_3col.sh** are used to extract the necessary columns from the annotations. 
 
-## finding all of the GSE experiments for an organism
+## Finding all of the GSE experiments for an organism
 
 Given below is a sample query at [GEO datasets](https://www.ncbi.nlm.nih.gov/gds/) for human (for mouse/rat, *Organism* identifier needs to be appropriately replaced):
 
@@ -88,9 +87,9 @@ WGCNA clustering of top N genes by expression uses **GSEXXX_GPLYYY_preprocessed.
 * after this, the function picks mergeCutHeight: 0.15 for pow > 10, and 0.25 for pow <= 10;
 * finally, the clustering is performed, and several files are saved.
 
-We would need genes-to-clusters tables (for .gmt file that later becomes GeneQuery database), and eigengene table (for the heatmap). 
+We would need genes-to-clusters tables (for GMT file that later becomes GeneQuery database), and eigengene table (for the heatmap). 
 
-## heatmap generation 
+## Heatmap generation 
 
 Heatmap generation is done by function *make_svg_heatmaps* in *genequery_functions.R*. It uses eigengene matrix generated during the WGCNA clustering. 
 
