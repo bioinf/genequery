@@ -41,9 +41,9 @@ Given below is a sample query at [GEO datasets](https://www.ncbi.nlm.nih.gov/gds
 `("Homo Sapiens"[Organism]) AND expression profiling by array[DataSet Type] AND "gse"[Filter]`
 
 (We used to include `AND (8[n_samples] : 200[n_samples])`, but *n_samples* does not seem to be supported by GEO anymore) 
-The results are then saved using *Send to* button below the search bar; save it as a file of summaries in default order. 
+The results are then saved using *Send to* button below the search bar; save it as a file of summaries in default order. Example search results are included in **GEO_search** folder in this repository. 
 
-Example search results are included in **GEO_search** folder in this repository. 
+![alt text](img/GEO_search.png?raw=true "Sending all the found GSE results to a text file")
 
 ## GSE series matrix download
 
