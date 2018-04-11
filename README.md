@@ -67,8 +67,8 @@ The script would attempt to guess if the matrix is log2 transformed or not (see 
 * Number of samples is greated than a pre-defined maximum (default = 200). 
 * Expression matrix is empty; 
 * Expression matrix maximum and average values are outside of pre-defined ranges: 
-** ave 4-10, max 10-25 for log2-transformed matrix;
-** max 5000-100000 for non-log2-transformed matrix. 
+  * ave 4-10, max 10-25 for log2-transformed matrix;
+  * max 5000-100000 for non-log2-transformed matrix. 
 
 If none of the above criteria are satisfied, the matrix statistics are printed to logs (STDERR), and the non-log2-transformed matrix is printed following the 3col annotation columns in the comma-separated (CSV) format. 
 
@@ -81,10 +81,10 @@ WGCNA clustering of top N genes by expression uses **GSEXXX_GPLYYY_preprocessed.
 * collapses probes to genes using WGCNA built-in function collapseRows;
 * takes top N genes (6000 by default) as ranked by max2 function - see max2 definition in *genequery_functions.R*; 
 * generates Rsq of scale-free fit for powers 5-25, after which
-** if Rsq is 0.9 is achievable, it picks the lowest power at which Rsq is >= 0.9;
-** if only Rsq of 0.8 is achievable, it picks the lowest power at which Rsq is >= 0.8; 
-** if only Rsq of 0.7 is achievable, it picks the lowest power at which Rsq is >= 0.7;
-** if Rsq is < 0.7 for all powers in [5:25], clustering is considered failed.
+  * if Rsq is 0.9 is achievable, it picks the lowest power at which Rsq is >= 0.9;
+  * if only Rsq of 0.8 is achievable, it picks the lowest power at which Rsq is >= 0.8; 
+  * if only Rsq of 0.7 is achievable, it picks the lowest power at which Rsq is >= 0.7;
+  * if Rsq is < 0.7 for all powers in [5:25], clustering is considered failed.
 * after this, the function picks mergeCutHeight: 0.15 for pow > 10, and 0.25 for pow <= 10;
 * finally, the clustering is performed, and several files are saved.
 
